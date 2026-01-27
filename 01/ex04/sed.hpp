@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 16:41:16 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/27 16:45:19 by kwrzosek         ###   ########.fr       */
+/*   Created: 2026/01/27 16:51:00 by kwrzosek          #+#    #+#             */
+/*   Updated: 2026/01/27 18:39:53 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef SED_HPP
+#define SED_HPP
 
-HumanB :: HumanB(std::string name) : name(name)
-{
-	this->weapon = NULL;
-}
+#include <string>
+#include <iostream>
+#include <fstream>
 
-void	HumanB :: setWeapon(Weapon& newWeapon)
-{
-	this->weapon = &newWeapon;
-}
+std:: string	ft_replace(std:: string line, std:: string s1, std:: string s2);
+bool		check_s1(std:: string line, std:: string s1, int j);
+int	ft_strlen(std:: string str);
 
-void HumanB :: attack()
-{
-	if (this->weapon != NULL)
-		std::cout<<name<<" attacks with their "<<this->weapon->getType()<<std::endl;
-	else
-		std::cout<<this->name<<" has no weapon"<<std::endl;
-}
+#endif

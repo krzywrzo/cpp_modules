@@ -1,7 +1,8 @@
-NAME        = ex03
+NAME        = ex04
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
-SRCS        = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+HEADER		= sed.hpp
+SRCS        = main.cpp utils.cpp
 OBJS        = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -9,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp $(HEADERS)
+%.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

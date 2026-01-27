@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 16:41:16 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/27 16:45:19 by kwrzosek         ###   ########.fr       */
+/*   Created: 2026/01/27 17:28:09 by kwrzosek          #+#    #+#             */
+/*   Updated: 2026/01/27 18:48:07 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "sed.hpp"
 
-HumanB :: HumanB(std::string name) : name(name)
+std:: string	ft_replace(std:: string line, std:: string s1, std:: string s2)
 {
-	this->weapon = NULL;
-}
-
-void	HumanB :: setWeapon(Weapon& newWeapon)
-{
-	this->weapon = &newWeapon;
-}
-
-void HumanB :: attack()
-{
-	if (this->weapon != NULL)
-		std::cout<<name<<" attacks with their "<<this->weapon->getType()<<std::endl;
-	else
-		std::cout<<this->name<<" has no weapon"<<std::endl;
+	if (line.empty())
+		return (line);
+	
+	size_t pos = 0;
+	while((pos = line.find(s1, pos)) != std::string::npos)
+	{
+		line.erase(pos, s1.length());
+		line.insert(pos, s2);
+		pos += s2.length();
+	}
+	return (line);
 }

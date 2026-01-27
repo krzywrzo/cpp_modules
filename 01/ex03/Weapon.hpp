@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 20:25:02 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/26 20:35:58 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2026/01/27 15:34:42 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class Weapon{
 	std::string type;
 
 	public:
-	void	getType();
-	void	setType(); 
+	Weapon(std:: string type);
+	const std:: string& getType();
+	void	setType(std:: string newType); 
 };
 
 #endif
