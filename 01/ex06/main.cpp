@@ -5,44 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 16:49:01 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/29 14:32:24 by kwrzosek         ###   ########.fr       */
+/*   Created: 2026/01/29 14:44:48 by kwrzosek          #+#    #+#             */
+/*   Updated: 2026/01/29 15:11:54 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char **argv)
 {
-	std:: string	filename;
-	std:: string	s1;
-	std:: string	s2;
-	std:: string	line;
+	(void)argc;
+	std::string level = argv[1];
+	Harl harl;
 
-	if (argc != 4)
-		return (1);
-	filename = argv[1];
-	s1 = argv[2];
-	s2 = argv[3];
-	
-	std:: string output = filename + ".replace";
-	std:: ifstream in_file(filename); 
-	std:: ofstream out_file(output);
-
-	if (!in_file.is_open() || !out_file.is_open())
-	{
-		std::cout<<"Cannot open file"<<std::endl;
-		return (1);
-	}
-
-	while (getline(in_file, line))
-	{
-		out_file<<ft_replace(line, s1, s2);
-		if(!in_file.eof())
-			out_file<<std::endl;
-	}
-
-	out_file.close();
-	in_file.close();
-	return (0);
+	harl.complain(level);
+	return 0;
 }
