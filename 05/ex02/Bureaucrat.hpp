@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/04 12:14:09 by kwrzosek          #+#    #+#             */
+/*   Updated: 2026/09/01 11:58:42 by kwrzosek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
+# include <iostream>
+# include <string>
+# include "AForm.hpp"
+
+class AForm;
+
+class  Bureaucrat
+{
+	public:
+	const std::string &name;
+	int grade;
+
+	std::string	getName() const;
+	int getGrade() const;
+	void	incrementGrade();
+	void	decrementGrade();
+	void	signForm(AForm &form);
+
+	void executeForm(AForm const & form);
+
+	Bureaucrat(const std::string name, int grade);
+	~Bureaucrat();
+
+
+	// exceptions
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+	
+};
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs);
+
+#endif
