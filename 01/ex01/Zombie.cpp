@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:41:56 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/26 20:09:19 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2026/02/07 18:22:40 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ void Zombie :: set_name(std:: string name)
 void Zombie :: announce()
 {
 	std::cout<<this->name<<": "<<"BraiiiiiiinnnzzzZ..."<<std::endl;
+}
+
+Zombie :: ~Zombie()
+{
+	std::cout<<"destructor";
 }

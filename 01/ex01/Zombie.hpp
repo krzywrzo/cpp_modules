@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:41:54 by kwrzosek          #+#    #+#             */
-/*   Updated: 2026/01/26 20:08:32 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2026/02/07 18:22:10 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Zombie
 	Zombie();
 	void	set_name(std:: string name);
 	void	announce(void);
+	~Zombie();
 };
 
 Zombie	*zombieHorde(int n, std::string name);
